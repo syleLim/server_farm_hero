@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var schedule = require('node-schedule');
 var nodemailer = require('nodemailer');
-var excel = require('excel-export');
 
 //custum module
 var main = require('./routes/main');
@@ -54,73 +53,73 @@ app.use(function(err, req, res, next) {
 });
 
 
-//makeing excel _ but not work (for routing)
-var exceling2 = function(req, res){
-	var conf = {}
-	conf.cols = [{
-		caption: 'Date',
-		type: 'string',
-		width: 15
-	},
-	{
-		caption:'fname',
-		type:'string',
-		width : 10
-	},
-	{
-		caption:'fphone',
-		type: 'string',
-		width : 15
-	},
-	{
-		caption: 'tname',
-		type: 'string',
-		width: 10
-	},
-	{
-		caption: 'tphone',
-		type: 'string',
-		width: 15	
-	},
-	{
-		caption: 'address',
-		type: 'string',
-		width: 50
-	},
-	{
-		caption: 'ordercount',
-		type: 'number',
-		width: 5
-	},
-	{
-		caption: 'orderoption',
-		type: 'number',
-		width: 5
-	}];
+// //makeing excel _ but not work (for routing)
+// var exceling2 = function(req, res){
+// 	var conf = {}
+// 	conf.cols = [{
+// 		caption: 'Date',
+// 		type: 'string',
+// 		width: 15
+// 	},
+// 	{
+// 		caption:'fname',
+// 		type:'string',
+// 		width : 10
+// 	},
+// 	{
+// 		caption:'fphone',
+// 		type: 'string',
+// 		width : 15
+// 	},
+// 	{
+// 		caption: 'tname',
+// 		type: 'string',
+// 		width: 10
+// 	},
+// 	{
+// 		caption: 'tphone',
+// 		type: 'string',
+// 		width: 15	
+// 	},
+// 	{
+// 		caption: 'address',
+// 		type: 'string',
+// 		width: 50
+// 	},
+// 	{
+// 		caption: 'ordercount',
+// 		type: 'number',
+// 		width: 5
+// 	},
+// 	{
+// 		caption: 'orderoption',
+// 		type: 'number',
+// 		width: 5
+// 	}];
 
-	client.query("Select * From item", function(err, rows){
-		arr = [];
-		for(i = 0; i<rows.length; i++ ){
-			date = rows[i].date;
-			fname = rows[i].fname;
-			fphone = rows[i].fphone;
-			tname = rows[i].tname;
-			tphone = rows[i].tphone;
-			address = rows[i].address;
-			ordercount = rows[i].ordercount;
-			orderoption = rows[i].orderoption;
-			a = [date, fname, fphone, tname, tphone, address, ordercount, orderoption];
-			arr.push(a);
-		}
-		conf.rows = arr;
+// 	client.query("Select * From item", function(err, rows){
+// 		arr = [];
+// 		for(i = 0; i<rows.length; i++ ){
+// 			date = rows[i].date;
+// 			fname = rows[i].fname;
+// 			fphone = rows[i].fphone;
+// 			tname = rows[i].tname;
+// 			tphone = rows[i].tphone;
+// 			address = rows[i].address;
+// 			ordercount = rows[i].ordercount;
+// 			orderoption = rows[i].orderoption;
+// 			a = [date, fname, fphone, tname, tphone, address, ordercount, orderoption];
+// 			arr.push(a);
+// 		}
+// 		conf.rows = arr;
 
-		var result = excel.execute(conf);
+// 		var result = excel.execute(conf);
 
-		//not submit
-		res.send()
+// 		//not submit
+// 		res.send()
 
-	});
-}
+// 	});
+// }
 
 /*
 var make_excel = schedule.scheduleJob('15 * * * *', function(){
