@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>택배주문</title>
+    <link rel="stylesheet" type="text/css" href="C:\Users\syle6\Desktop\server_ver3.2\server\public\stylesheets\buyer.css"/>
+</head>
+<body>
+	<header>
+      농산물 택배 주문
+    </header>
+    <!-- Post alert concept no defined -->
+    
+	<form name="orderform" method="post">
+    <div class="orderArea">
+      <p class="essential-index"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"/> 필수입력사항</p>
+        <div class="title">
+          보내는 분 정보 입력
+        </div>
+        <!-- 보내는 사람 -->
+        <div class="boardWrite">
+            <table border="1" summary="">
+              <colgroup>
+                <col width="15%">
+              </colgroup>
+              <tbody class="address_form ">
+              <tr>
+            	  <th scope="row">성명
+            	  	<img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"/>
+            	  </th>
+              	<td>
+
+              		<input id="fname" name="fname" fw-filter="isFill" fw-label="주문자 성명" fw-msg="" class="inputTypeText" placeholder="" size="15" value="" type="text"  />
+              	</td>
+              </tr>
+
+              <tr>
+              	<th scope="row">휴대전화
+              		<img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"/>
+              	</th>
+              	<!--TODO : have to be input / maybe use div-->
+              <td>
+              	<select id="fphone1" name="fphone1" fw-filter="isNumber&isFill" fw-label="주문자 핸드폰번호" fw-alone="N" fw-msg="" >
+              		<option value="010">010</option>
+              		<option value="010">011</option>
+              		<option value="010">017</option>
+              		<option value="010">019</option>
+            	</select>
+            	-
+            	<input id="fphone2" name="fphone2" maxlength="4" fw-filter="isNumber&isFill" fw-label="주문자 핸드폰번호" fw-alone="N" fw-msg="" size="4" value="" type="text"  />
+            	-
+            	<input id="fphone3" name="fphone3" maxlength="4" fw-filter="isNumber&isFill" fw-label="주문자 핸드폰번호" fw-alone="N" fw-msg="" size="4" value="" type="text"  /></td>
+              </tr>
+              </tbody>
+            </table>
+        </div>
+      <!--받는 사람 -->
+          <div class="title">
+            받는 분 정보 입력
+          </div>
+          <div class="boardWrite">
+              <table border="1" summary="">
+                <colgroup>
+                  <col width="15%">
+                </colgroup>
+                <tbody class="address_form ">
+                <tr>
+                	<th scope="row">성명 
+                		<img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"/>
+                	</th>
+                	<td>
+                		<input id="tname" name="tname" fw-filter="isFill" fw-label="수신자 성명" fw-msg="" class="inputTypeText" placeholder="" size="15" value="" type="text"  />
+                	</td>
+                </tr>
+
+                <tr>
+                	<th scope="row">휴대전화
+                		<img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"/>
+                	</th>
+                	<td>
+                		<select id="tphone1" name="tphone1" fw-filter="isNumber&isFill" fw-label="수신자자 핸드폰번호" fw-alone="N" fw-msg="" >
+                			<option value="010">010</option>
+                			<option value="010">011</option>
+                			<option value="010">017</option>
+                			<option value="010">019</option>
+              			</select>
+              			-
+              			<input id="tphone2" name="tphone2" maxlength="4" fw-filter="isNumber&isFill" fw-label="수신자 핸드폰번호" fw-alone="N" fw-msg="" size="4" value="" type="text"  />
+              			-
+              			<input id="tphone3" name="tphone3" maxlength="4" fw-filter="isNumber&isFill" fw-label="수신자 핸드폰번호" fw-alone="N" fw-msg="" size="4" value="" type="text"  />
+              		</td>
+                </tr>
+
+                <tr>
+                	<th scope="row">주소 
+                		<img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"/>
+                	</th>
+                	<td>
+                		<textarea id="address" name="address" rows="2" cols="60"></textarea>
+                	</td>
+                </tr>
+                </tbody>
+              </table>
+          </div>
+      <!-- 상품 정보 -->
+        <div class="title">
+        상품 정보 입력
+        </div>
+          <div class="boardWrite">
+            <table border="1" summary="">
+              <colgroup>
+                <col width="15%">
+              </colgroup>
+              <tbody class="address_form ">
+              <tr>
+              	<th scope="row">수량 
+              		<img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"/>
+              	</th>
+              	<td>
+              		<input id="ordercount" name="ordercount" type="text"  />
+              	</td>
+              </tr>
+              <tr>
+              <th>상품 종류
+              	<img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"/>
+              </th>
+              <td>
+              	<select name="orderoption" required="true">
+                	<option value="1" selected> A등급 </option>
+                	<option value="2" selected> B등급 </option>
+                	<option value="3" selected> C등급 </option>
+                	<option value="4" selected> D등급 </option>
+                	<option value="5" selected> E등급 </option>
+              </select>
+              </td>
+              </tr>
+              </tbody>
+          </table>
+        </div>
+
+        <input id="orderbtn" type="button" onclick="check()" value="주문">
+       
+    </div>
+    </form>
+    <script>
+            function check() {
+              if(document.getElementById("fname").value=="") {
+                alert("보내는 분 이름을 입력해 주세요.");
+                document.getElementById("fname").focus();
+              }else if(document.getElementById("fphone2").value==""){
+                alert("보내는 분 전화번호를 입력해주세요.");
+                document.getElementById("fphone2").focus();
+              }else if(document.getElementById("fphone3").value==""){
+                alert("보내는 분 전화번호를 입력해주세요.");
+                document.getElementById("fphone3").focus();
+              }else if(document.getElementById("tname").value==""){
+                alert("받는 분 성명을 입력해주세요.");
+                document.getElementById("tname").focus();
+              }else if(document.getElementById("tphone2").value==""){
+                alert("받는 분 전화번호를 입력해주세요.");
+                document.getElementById("tphone2").focus();
+              }else if(document.getElementById("tphone3").value==""){
+                alert("받는 분 전화번호를 입력해주세요.");
+                document.getElementById("tphone3").focus();
+              }else if(document.getElementById("address").value==""){
+                alert("받는 분 주소를 입력해주세요.");
+                document.getElementById("address").focus();
+              }else if(document.getElementById("ordercount").value==""){
+                alert("수량을 입력해주세요.");
+                document.getElementById("ordercount").focus();
+              }else{
+                document.orderform.submit();
+              } 
+            }
+        </script>
+
+
+</body>
+</html>

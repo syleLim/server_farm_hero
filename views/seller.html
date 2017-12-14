@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Seller</title>
+</head>
+<body>
+	<table width = "100%"" border ="1">
+		<tr>
+			<th>id</th>
+			<th>date</th>
+			<th>buyer</th>
+			<th>buyer_phone</th>
+			<th>addressee</th>
+			<th>addressee_phone</th>
+			<th>address</th>
+			<th>number</th>
+			<th>opt</th>
+			<th>price</th>
+		</tr>
+		<% data.forEach(function (item, index) { %>
+		<tr>
+			<td><%= item.id %></td>
+			<td><%= item.date %></td>
+			<td><%= item.fname %></td>
+			<td><%= item.fphone %></td>
+			<td><%= item.tname %></td>
+			<td><%= item.tphone %></td>
+			<td><%= item.address %></td>
+			<td><%= item.ordercount %></td>
+			<td><%= item.orderoption %></td>
+			<td><%= item.ordercount * item.orderoption %></td>
+		</tr>
+		<% }); %>
+
+	</table>
+
+</body>
+</html>

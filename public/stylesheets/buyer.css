@@ -1,0 +1,48 @@
+header{
+  padding-left: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+  width: 650px;
+}
+th{
+  text-align: left;
+  padding: 5px;
+  padding-left: 10px;
+  font-size: 12px;
+  font-family: "돋움";
+  font-weight: lighter;
+  background-color: #f4f4f4;
+}
+td{
+  padding: 5px;
+  width: 300px;
+}
+table{
+  border-collapse: collapse;
+  border: 1.5px solid #E2E0E0;
+  width: 550px;
+}
+.orderArea{
+  width: 600px;
+  padding-left: 10px;
+  border: 0.5px solid #C9C8C8;
+  margin: 20px;
+}
+.title{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+.essential-index{
+  font-family: "돋움";
+  text-align: right;
+  font-size: 11px;
+  padding-right: 10px;
+}
+.boardWrite{
+  padding-bottom: 20px;
+}
+#orderbtn{
+  margin-left: 250px;
+  margin-bottom: 20px;
+}

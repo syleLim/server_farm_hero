@@ -1,0 +1,21 @@
+1. seller.js <-> seller.html 연결 오류 있음 -해결 ver 3.1
+
+2. insert query 작동안함 - 해결 ver 3.3
+
+3. error.html 작성안함 - 해결 X
+
+4. db 변경 - 해결 ver 3.1
+
+5. server play 구축 - 해결 ver 3.1
+
+6. excel export 작동 안함 - 해결 ver3.3
+
+7. mailing 작업 완료 - ver 3.3
+
+8. alerting 완료 - ver3.3
+
+9. seller에서 등급별 숫자 적용 못함 - 해결 X
+
+10. login Page 구현
+
+11. 웹에 띄우기 

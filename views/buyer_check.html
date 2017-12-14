@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>주문 내역</title>
+    <style media="screen">
+      header{
+        font-size: 20px;
+        padding-left: 30px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid gray;
+        width: 100%;
+      }
+      table{
+        width: 100%;
+        margin-top: 10px;
+        /* border: 0.5px solid black; */
+      }
+      th{
+        margin: 0px;
+        font-size: 20px;
+        font-family: "돋움";
+        font-weight: lighter;
+        background-color: #f4f4f4;
+        border: 1px solid #C9C8C8;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+      }
+      td{
+        font-size: 20px;
+        font-family: "돋움";
+        font-weight: lighter;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+      }
+      input{
+        width: 300px;
+        font: #f4f4f4;
+        font-size: 20px;
+        font-family: "돋움";
+        font-weight: lighter;
+      }
+      #name{
+        width: 150px;
+      }
+      #phonenumber{
+        width: 200px;
+      }
+      .option-sort{
+        border: 0.5px solid black;
+        margin-bottom:20px;
+      }
+      .an-order{
+        border: 0.5px solid black;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      주문확인
+    </header>
+        
+    <!-- 주문 내역 시작 -->
+    
+    <div class="an-order">
+    <!-- 보내는 사람 -->
+    <table class="orderlist">
+    <thead>
+      <tr>
+        <th scope="col" id="name">보내는 사람</th>
+        <th scope="col" id="phonenumber">전화번호</th>
+        <th scope="col" id="orderinformation">상품 옵션</th>
+        <th scope="col" id="orderinformation">주문 수량</th>
+      </tr>
+    </thead>
+    <!-- Table body -->
+    <tbody>
+      <tr>
+        <td><%= item.fname %></td>
+        <td><%= item.fphone %></td>
+        <td><%= item.orderoption %></td>
+        <td><%= item.ordercount %></td>
+      </tr>
+    </tbody>
+    </table>
+    <!--받는 사람 -->
+    <table class="orderlist">
+      <thead>
+        <tr>
+          <th scope="col" id="name">받는 사람</th>
+          <th scope="col" id="phonenumber">전화번호</th>
+          <th scope="col" id="orderinformation">주소</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= item.tname %></td>
+          <td><%= item.tphone %></td>
+          <td><%= item.address %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+  <form method = "post" action ='/buyer/buyer_check/check'>
+      <input type="submit" value="확인" id ="confirm" name ="confirm" >
+  </form>
+  <form method = "post" action ='buyer/reject'>
+      <input type="submit" value="수정" id ="reject" name ="reject">
+  </form>
+
+
+  </body>
+</html>
