@@ -16,7 +16,9 @@
     "socket.io" : "*",
     "ejs": "~2.3.3",
     "node-schedule" : "1.2.5",
-    "nodemailer" : "4.4.1"
+    "nodemailer" : "4.4.1",
+    "mysql" : "2.15.0"
+
   },
   "author" : "syle94",
   "license" : "ISC"
