@@ -2,6 +2,7 @@ var mysql = require('mysql');
 
 var client = mysql.createConnection({
 	//TODO : DB connect
+	connectionLimit : 10,
 	host : 'us-cdbr-iron-east-05.cleardb.net',
 	user : 'bf2c3bbc87c230',
 	password : 'cceac6ea',
