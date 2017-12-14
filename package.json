@@ -14,7 +14,9 @@
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5",
     "socket.io" : "*",
-    "ejs": "~2.3.3"
+    "ejs": "~2.3.3",
+    "node-schedule" : "1.2.5",
+    "nodemailer" : "4.4.1"
   },
   "author" : "syle94",
   "license" : "ISC"
