@@ -48,7 +48,7 @@ router.post('/:something', function(request, response, next){
 
 });
 
-router.post('/buyer_check/check' ,function(request, response, next){
+router.post('buyer/buyer_check/check' ,function(request, response, next){
 
 	var s = new Date()
 	var y = s.getFullYear().toString();
@@ -70,7 +70,8 @@ router.post('/buyer_check/check' ,function(request, response, next){
 	});
 }); 
 
-router.post('/reject' ,function(request, response, next){
+
+router.post('buyer/buyer_check/reject' ,function(request, response, next){
 
 	var s = new Date();
 	var y = s.getFullYear().toString();
