@@ -9,7 +9,7 @@ var fs = require('fs');
 var ejs = require('ejs');
 
 
-var isJson = true;
+var isJson = false;
 
 
 //Get Set up
@@ -48,7 +48,9 @@ router.post('/:something', function(request, response, next){
 
 });
 
-router.post('buyer/buyer_check/check' ,function(request, response, next){
+router.post('/buyer_check/check' ,function(request, response, next){
+
+	console.log('whatthe fuck')
 
 	var s = new Date()
 	var y = s.getFullYear().toString();
@@ -57,9 +59,9 @@ router.post('buyer/buyer_check/check' ,function(request, response, next){
 
 	//console.log(request.params.something); 
 
-	 if (isJson){
-	 	jsoning(request, body, y+m+d)
-	 }
+	 // if (isJson){
+	 // 	jsoning(request, body, y+m+d)
+	 // }
 
 
 	client.query('Insert Into item ( date, fname, fphone, tname, tphone, address, ordercount, orderoption, sphone ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
@@ -71,7 +73,7 @@ router.post('buyer/buyer_check/check' ,function(request, response, next){
 }); 
 
 
-router.post('buyer/buyer_check/reject' ,function(request, response, next){
+router.post('/buyer_check/reject' ,function(request, response, next){
 
 	var s = new Date();
 	var y = s.getFullYear().toString();
@@ -84,27 +86,27 @@ router.post('buyer/buyer_check/reject' ,function(request, response, next){
 }); 
 
 
-var jsoning = function(request, body, day){
+// var jsoning = function(request, body, day){
 
-	var item = {
-		date : day, fname : body.fname, fphone : (body.fphone1+body.fphone2+body.fphone3), tname : body.tname, tphone : (body.tphone1+body.tphone2+body.tphone3), address : body.address, ordercount : body.ordercount, orderoption : body.orderoption, sphone : param
-	};
+// 	var item = {
+// 		date : day, fname : body.fname, fphone : (body.fphone1+body.fphone2+body.fphone3), tname : body.tname, tphone : (body.tphone1+body.tphone2+body.tphone3), address : body.address, ordercount : body.ordercount, orderoption : body.orderoption, sphone : param
+// 	};
 
-	console.log(item);
+// 	console.log(item);
 
-	var stringJson = JSON.stringfy(item) +'\n';
+// 	var stringJson = JSON.stringfy(item) +'\n';
 
-	console.log(stringJson);
+// 	console.log(stringJson);
 
-	fs.open('./routes/Data_Base/data.json', 'a', '666', function(err, id){
-		if(err){
-			console.log('file err');
-		}else{
-			fs.write(id, stringJson, null, 'utf8', function(err){
-				console.log('file save');
-			});
-		}
-	});
-}
+// 	fs.open('./routes/Data_Base/data.json', 'a', '666', function(err, id){
+// 		if(err){
+// 			console.log('file err');
+// 		}else{
+// 			fs.write(id, stringJson, null, 'utf8', function(err){
+// 				console.log('file save');
+// 			});
+// 		}
+// 	});
+// }
 
 module.exports = router;
